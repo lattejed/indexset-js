@@ -1,3 +1,8 @@
+/**
+ * Created by matthew on 6/21/16.
+ */
+
+var IndexRange = require('./indexrange.js');
 
 /**
  * Creates an instance of IndexSet.
@@ -108,7 +113,7 @@ IndexSet.prototype._removeRange = function(range) {
     for (var i=0; i<ranges.length; i++) {
         var _range = ranges[i];
         if (range.equals(_range)) {
-            ranges.splice(i, 1);
+            ranges.splice(i, 1); // TODO: fix this
             break;
         } 
         if (range.overlaps(_range)) {

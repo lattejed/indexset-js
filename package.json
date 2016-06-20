@@ -1,0 +1,27 @@
+{
+  "name": "indexset-js",
+  "version": "0.0.1",
+  "description": "An index set implementation in javascript for efficient storage and manipulation of sets of integers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lattejed/indexset-js.git"
+  },
+  "keywords": [
+    "set",
+    "indexset"
+  ],
+  "author": "Matthew Smith <m@lattejed.com> (http://lattejed.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lattejed/indexset-js/issues"
+  },
+  "homepage": "https://github.com/lattejed/indexset-js#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
