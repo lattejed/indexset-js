@@ -51,12 +51,28 @@ describe('IndexRange', function() {
     });
 
     describe('.compact()', function () {
-        it('should join two overlapping ranges', function () {
+        it('should join three overlapping ranges', function () {
             var range0 = new IndexRange(0, 1);
             var range1 = new IndexRange(2, 4);
             var range2 = new IndexRange(3, 6);
-            //var compacted = IndexRange.compact([range1, range2, range0]);
-            //compacted.length.should.equal(1);
+            var compacted = IndexRange.compact([range1, range2, range0]);
+            compacted.length.should.equal(1);
+            compacted[0].equals(new IndexRange(0, 6)).should.equal(true);
+        });
+        it('should join two contiguous ranges', function () {
+            var range0 = new IndexRange(0, 1);
+            var range1 = new IndexRange(2, 4);
+            var compacted = IndexRange.compact([range1, range0]);
+            compacted.length.should.equal(1);
+            compacted[0].equals(new IndexRange(0, 4)).should.equal(true);
+        });
+        it('should not join two non-contiguous ranges', function () {
+            var range0 = new IndexRange(0, 1);
+            var range1 = new IndexRange(3, 5);
+            var compacted = IndexRange.compact([range1, range0]);
+            compacted.length.should.equal(2);
+            compacted[0].equals(new IndexRange(0, 1)).should.equal(true);
+            compacted[1].equals(new IndexRange(3, 5)).should.equal(true);
         });
     });
 

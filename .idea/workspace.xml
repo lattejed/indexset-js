@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42c53a97-e9dc-44be-9aea-47cb4d4b848a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/indexrange.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/range.js" afterPath="$PROJECT_DIR$/src/indexrange.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/indexset.js" afterPath="$PROJECT_DIR$/src/indexset.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/indexrange.js" afterPath="$PROJECT_DIR$/test/indexrange.js" />
     </list>
     <ignored path="indexset-js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +48,8 @@
       <file leaf-file-name="indexrange.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/indexrange.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+            <state relative-caret-position="330">
+              <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -267,32 +265,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1466438856018</updated>
-      <workItem from="1466438857402" duration="18317000" />
+      <workItem from="1466438857402" duration="18577000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Mocha - 2016.06.21 at 04h 12m 13s.xml">
-      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 04h 12m 46s.xml">
-      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 04h 14m 04s.xml">
-      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 04h 14m 37s.xml">
-      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 04h 17m 20s.xml">
-      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 04h 19m 56s.xml">
-      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 04h 20m 57s.xml">
-      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="Mocha - 2016.06.21 at 04h 21m 18s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
@@ -302,9 +279,30 @@
     <history-entry file="Mocha - 2016.06.21 at 04h 23m 01s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
+    <history-entry file="Mocha - 2016.06.21 at 04h 27m 33s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.06.21 at 04h 28m 06s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.06.21 at 04h 28m 14s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.06.21 at 04h 29m 01s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.06.21 at 04h 29m 20s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.06.21 at 04h 29m 39s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.06.21 at 04h 29m 48s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18317000" />
+    <option name="totallyTimeSpent" value="18577000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
@@ -365,8 +363,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/indexrange.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+        <state relative-caret-position="330">
+          <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
