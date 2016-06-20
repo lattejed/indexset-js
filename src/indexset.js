@@ -8,9 +8,9 @@
  * @this {IndexSet}
  */
 
-module.exports = function IndexSet() {
+module.exports = IndexSet = function() {
     if (!(this instanceof IndexSet)) {
-        return new IndexSet(idxs);
+        return new IndexSet();
     }
     /** @private */ 
     this._ranges = [];
@@ -18,17 +18,15 @@ module.exports = function IndexSet() {
 }
 
 /**
- * Add Ranges to set.
- * @param {(Range|Range[])} ranges - Ranges to add.
+ * Add IndexRanges to set.
+ * @param {(IndexRange|IndexRange[])} ranges - IndexRanges to add.
  */
 
 IndexSet.prototype.addRanges = function(ranges) {
     if (!Array.isArray(ranges)) {
         ranges = [ranges];
     }
-    for (var i=0; i<ranges.length; i++) {
-        this._addRange(ranges[i]);
-    }
+    this._addRanges(ranges);
 }
 
 /** 
@@ -42,9 +40,12 @@ IndexSet.prototype.addIndexes = function(idxs) {
     if (!Array.isArray(idxs)) {
         idxs = [idxs];
     }
+    var ranges = [];
     for (var i=0; i<idxs.length; i++) {
-        this._addRange(new Range(idxs[i], idxs[i]));
+        var idx = idxs[i];
+        ranges.push(new IndexRange(idx, idx));
     }
+    this._addRanges(ranges);
 }
 
 /** 
@@ -97,84 +98,28 @@ IndexSet.prototype.lastIndex = function() {
  * @private
  */
 
-IndexSet.prototype._addRange = function(range) {
-    for (var i=0; i<this._ranges.length; i++) {
-        var range = this._ranges[i];
-        var lo = range.start;
-        var hi = range.end;
-        if (idx >= lo && idx <= hi) {
-            continue;
-        }
-        if (idx + 1 === lo) {
-            this._ranges[i] = new Range(idx, hi);
-            break;
-        }
-        if (idx - 1 === hi) {
-            this._ranges[i] = new Range(lo, idx);
-            break;
-        }
-        this._ranges.push(new Range(idx, idx))
-    }
+IndexSet.prototype._addRanges = function(ranges) {
+    this._ranges = IndexRange.compact(this._ranges + ranges)
     this._updateOrderAndCount();
 }
 
 IndexSet.prototype._removeRange = function(range) {
-    for (var i=0; i<this._ranges.length; i++) {
-        var _range = this._ranges[i];
-        var lo = _range.start
-        var hi = _range.end;
+    var ranges = IndexRange.compact(this._ranges + [range])
+    for (var i=0; i<ranges.length; i++) {
+        var _range = ranges[i];
         if (range.equals(_range)) {
-            this._ranges.splice(i, 1);
+            ranges.splice(i, 1);
             break;
-        }
-        if (idx === lo) {
-            this._ranges[i] = [lo + 1, hi];
-            break;
-        }
-        if (idx === hi) {
-            this._ranges[i] = [lo, hi - 1];
-            break;
-        }
-        if (idx >= lo && idx <= hi) {
-            this._ranges.push([lo, idx - 1]);
-            this._ranges.push([idx + 1, hi]);
+        } 
+        if (range.overlaps(_range)) {
+            ranges[i] = _range.subtract(range);
             break;
         }
     }
-    this._updateOrderAndCount();
+    this._updateCount();
 }
 
-IndexSet.prototype._removeIndex = function(idx) {
-    idx = parseInt(idx, 10);  
-    for (var i=0; i<this._ranges.length; i++) {
-        var range = this._ranges[i];
-        var lo = range[0];
-        var hi = range[1];
-        if (idx === lo && hi === lo) {
-            this._ranges.splice(i, 1);
-            break;
-        }
-        if (idx === lo) {
-            this._ranges[i] = [lo + 1, hi];
-            break;
-        }
-        if (idx === hi) {
-            this._ranges[i] = [lo, hi - 1];
-            break;
-        }
-        if (idx >= lo && idx <= hi) {
-            this._ranges.push([lo, idx - 1]);
-            this._ranges.push([idx + 1, hi]);
-            break;
-        }
-    }
-    this._updateOrderAndCount();
-}
-
-IndexSet.prototype._updateOrderAndCount = function() {
-    this._ranges = this._ranges.sort(function(a, b) { 
-        return a.start - b.start;
-    });
+IndexSet.prototype._updateCount = function() {
     var count = 0;
     for (var i=0; i<this._ranges.length; i++) {
         var range = this._ranges[i];
