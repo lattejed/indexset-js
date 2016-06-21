@@ -78,11 +78,27 @@ IndexSet.prototype.addIndexes = function(idxs) {
     if (!Array.isArray(idxs)) {
         idxs = [idxs];
     }
-    var ranges = [];
+    var ints = [];
     for (var i=0; i<idxs.length; i++) {
-        var idx = idxs[i];
-        ranges.push(new IndexRange(idx, idx));
+        ints.push(parseInt(idxs[i], 10));
     }
+    ints = ints.sort();
+    var ranges = [];
+    var start = undefined;
+    var end = undefined;
+    for (var i=0; i<ints.length; i++) {
+        var idx = ints[i];
+        if (start === undefined) {
+            start = end = idx;
+        }
+        if (idx - end < 2) {
+            end = idx;
+        } else {
+            ranges.push(new IndexRange(start, end));
+            start = end = idx;
+        }
+    }
+    ranges.push(new IndexRange(start, end));
     this._addRanges(ranges);
 }
 

@@ -51,7 +51,6 @@ describe('IndexSet', function() {
         });
     });
 
-
     describe('#addIndexes()', function () {
         it('should add an index as string', function () {
             var set = new IndexSet();
@@ -67,6 +66,11 @@ describe('IndexSet', function() {
             var set = new IndexSet();
             set.addIndexes(['0','1','2','3']);
             set.count().should.equal(4);
+        });
+        it('should add an array non-contiguous indexes', function () {
+            var set = new IndexSet();
+            set.addIndexes([0, 1, 3, 4, 6]);
+            set.count().should.equal(5);
         });
     });
 

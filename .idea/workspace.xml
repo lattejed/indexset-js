@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="42c53a97-e9dc-44be-9aea-47cb4d4b848a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/indexrange.js" afterPath="$PROJECT_DIR$/src/indexrange.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/indexset.js" afterPath="$PROJECT_DIR$/src/indexset.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/indexrange.js" afterPath="$PROJECT_DIR$/test/indexrange.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/indexset.js" afterPath="$PROJECT_DIR$/test/indexset.js" />
     </list>
     <ignored path="indexset-js.iws" />
@@ -27,12 +24,12 @@
     <favorites_list name="indexset-js" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="indexset.js" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="indexset.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/indexset.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -40,11 +37,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="indexset.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="indexset.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/indexset.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+            <state relative-caret-position="445">
+              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="indexrange.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/indexrange.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="69" column="7" selection-start-line="69" selection-start-column="3" selection-end-line="69" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -267,44 +274,45 @@
       <option name="presentableId" value="Default" />
       <updated>1466438856018</updated>
       <workItem from="1466438857402" duration="21219000" />
-      <workItem from="1466498094724" duration="4351000" />
+      <workItem from="1466498094724" duration="5242000" />
+      <workItem from="1466535953748" duration="5154000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Mocha - 2016.06.21 at 17h 00m 49s.xml">
+    <history-entry file="Mocha - 2016.06.22 at 03h 29m 09s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 17h 01m 02s.xml">
+    <history-entry file="Mocha - 2016.06.22 at 03h 32m 07s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 17h 45m 33s.xml">
+    <history-entry file="Mocha - 2016.06.22 at 03h 33m 58s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 17h 48m 43s.xml">
+    <history-entry file="Mocha - 2016.06.22 at 03h 36m 40s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 17h 49m 04s.xml">
+    <history-entry file="Mocha - 2016.06.22 at 03h 37m 19s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 17h 49m 14s.xml">
+    <history-entry file="Mocha - 2016.06.22 at 03h 40m 17s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 18h 19m 41s.xml">
+    <history-entry file="Mocha - 2016.06.22 at 03h 47m 21s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 18h 20m 22s.xml">
+    <history-entry file="Mocha - 2016.06.22 at 03h 48m 36s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 18h 20m 39s.xml">
+    <history-entry file="Mocha - 2016.06.22 at 03h 48m 58s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Mocha - 2016.06.21 at 18h 20m 46s.xml">
+    <history-entry file="Mocha - 2016.06.22 at 03h 49m 27s.xml">
       <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25570000" />
+    <option name="totallyTimeSpent" value="31615000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
@@ -319,7 +327,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18448637" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26519915" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -345,18 +353,20 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/indexset.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+    <entry file="file://$PROJECT_DIR$/test/indexset.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -369,39 +379,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/indexrange.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/indexrange.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="269">
+          <caret line="69" column="7" selection-start-line="69" selection-start-column="3" selection-end-line="69" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/indexset.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/indexset.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/indexset.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
