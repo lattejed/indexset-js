@@ -11,7 +11,7 @@ describe('IndexRange', function() {
         it('should check for valid range', function () {
             (function(){
                 new IndexRange(1, 0);
-            }).should.throw('Invalid range: End before start.');
+            }).should.throw(Error);
         });
     });
 

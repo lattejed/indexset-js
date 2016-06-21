@@ -72,6 +72,15 @@ describe('IndexSet', function() {
             set.addIndexes([0, 1, 3, 4, 6]);
             set.count().should.equal(5);
         });
+        it('should add a large array of indexes', function () {
+            var idxs = [];
+            for (var i=0; i<1000; i++) {
+                idxs.push(i);
+            }
+            var set = new IndexSet();
+            set.addIndexes(idxs);
+            set.count().should.equal(1000);
+        });
     });
 
     describe('#removeIndexes()', function () {

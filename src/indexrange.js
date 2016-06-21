@@ -20,7 +20,7 @@ module.exports = IndexRange = function(start, end) {
     this._start = parseInt(start, 10);
     this._end = parseInt(end, 10);
     if (this._start > this._end) {
-        throw new Error('Invalid range: End before start.');
+        throw new Error('Invalid range: End before start: ' + this._start + ' ' + this._end);
     }
 }
 

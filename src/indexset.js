@@ -82,7 +82,7 @@ IndexSet.prototype.addIndexes = function(idxs) {
     for (var i=0; i<idxs.length; i++) {
         ints.push(parseInt(idxs[i], 10));
     }
-    ints = ints.sort();
+    ints = ints.sort(function(a,b) { return a - b; });
     var ranges = [];
     var start = undefined;
     var end = undefined;
