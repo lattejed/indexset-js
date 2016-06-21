@@ -23,6 +23,29 @@ module.exports = IndexSet = function() {
 }
 
 /**
+ * Creates an instance of IndexSet from a string rep.
+ * If string rep is invalid, returns undefined.
+ * @constructor
+ * @this {IndexSet}
+ * @param {string} str - Valid string representation.
+ */
+
+IndexSet.fromString = function(str) {
+    var reps = str.split(',');
+    var ranges = [];
+    for (var i=0; i<reps.length; i++) {
+        if (range = IndexRange.fromString(reps[i])) {
+            ranges.push(range);
+        } else {
+            return undefined;
+        }
+    }
+    var set = new IndexSet();
+    set.addRanges(ranges);
+    return set;
+}
+
+/**
  * Add IndexRanges to set.
  * @param {(IndexRange|IndexRange[])} ranges - IndexRanges to add.
  */
@@ -130,6 +153,25 @@ IndexSet.prototype.lastIndex = function() {
         return undefined;
     }
     return this._ranges[length-1].end();
+}
+
+/**
+ * Creates a string representation of IndexSet.
+ * If no indexes are present, returns undefined.
+ * @override
+ * @returns {string|undefined} - String representation.
+ */
+
+IndexSet.prototype.toString = function() {
+    if (this._ranges.length === 0) {
+        return undefined;
+    }
+    var ranges = IndexRange.compact(this._ranges);
+    var reps = [];
+    for (var i=0; i<ranges.length; i++) {
+        reps.push(ranges[i].toString());
+    }
+    return reps.join(',');
 }
 
 /** 

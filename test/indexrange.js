@@ -15,6 +15,16 @@ describe('IndexRange', function() {
         });
     });
 
+    describe('.fromString()', function () {
+        it('should create a range from a string rep', function () {
+            var range = IndexRange.fromString('12-14');
+            range.length().should.equal(3);
+        });
+        it('should fail to create a range from an invalid string rep', function () {
+            (typeof IndexRange.fromString('A-14')).should.equal('undefined');
+        });
+    });
+
     describe('#start()', function () {
         it('should give start index', function () {
             var range = new IndexRange(23, 24);
@@ -179,6 +189,13 @@ describe('IndexRange', function() {
             var range0 = new IndexRange(0, 2);
             var range1 = new IndexRange(1, 9);
             range0.contiguous(range1).should.equal(false);
+        });
+    });
+
+    describe('#toString()', function () {
+        it('should create string rep of range', function () {
+            var range = new IndexRange(12, 50);
+            range.toString().should.equal('12-50');
         });
     });
 

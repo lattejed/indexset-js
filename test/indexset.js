@@ -4,6 +4,17 @@ var IndexSet = require('../src/indexset.js');
 
 describe('IndexSet', function() {
 
+    describe('.fromString()', function () {
+        it('should create a set from a string rep', function () {
+            var set = IndexSet.fromString('1-2,5-10,11-14');
+            set.count().should.equal(12);
+        });
+        it('should fail to create a set from an invalid string rep', function () {
+            (typeof IndexSet.fromString('1-2,,5-10')).should.equal('undefined');
+            (typeof IndexSet.fromString('A-2,5-10')).should.equal('undefined');
+        });
+    });
+
     describe('#addRanges()', function () {
         it('should add one range', function () {
             var range = new IndexRange(23, 24);
@@ -19,7 +30,6 @@ describe('IndexSet', function() {
             set.count().should.equal(6);
         });
     });
-
 
     describe('#removeRange()', function () {
         it('should remove one range', function () {
@@ -43,14 +53,19 @@ describe('IndexSet', function() {
 
 
     describe('#addIndexes()', function () {
-        it('should an index as string', function () {
+        it('should add an index as string', function () {
             var set = new IndexSet();
             set.addIndexes('1');
             set.count().should.equal(1);
         });
-        it('should an array of indexes as numbers', function () {
+        it('should add an array of indexes as numbers', function () {
             var set = new IndexSet();
             set.addIndexes([0,1,2,3]);
+            set.count().should.equal(4);
+        });
+        it('should add an array of indexes as strings', function () {
+            var set = new IndexSet();
+            set.addIndexes(['0','1','2','3']);
             set.count().should.equal(4);
         });
     });
@@ -98,6 +113,16 @@ describe('IndexSet', function() {
         it('should return undefined', function () {
             var set = new IndexSet();
             (typeof set.lastIndex()).should.equal('undefined');
+        });
+    });
+
+    describe('#toString()', function () {
+        it('should create string rep of set', function () {
+            var range0 = new IndexRange(0, 10);
+            var range1 = new IndexRange(15, 20);
+            var set = new IndexSet();
+            set.addRanges([range0, range1]);
+            set.toString().should.equal('0-10,15-20');
         });
     });
 

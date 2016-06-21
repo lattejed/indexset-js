@@ -9,6 +9,8 @@
  * Behavior for negative numbers is undefined.
  * @constructor
  * @this {IndexRange}
+ * @param {Number|string} start - Start index.
+ * @param {Number|string} end - End index.
  */
 
 module.exports = IndexRange = function(start, end) {
@@ -20,6 +22,21 @@ module.exports = IndexRange = function(start, end) {
     if (this._start > this._end) {
         throw new Error('Invalid range: End before start.');
     }
+}
+
+/**
+ * Creates an instance of IndexRange from a string rep.
+ * If string rep is invalid, returns undefined.
+ * @constructor
+ * @this {IndexRange}
+ * @param {string} str - Valid string representation.
+ */
+
+IndexRange.fromString = function(str) {
+    if (m = str.match(/^(\d+)-(\d+)$/)) {
+        return new IndexRange(m[1], m[2]);
+    }
+    return undefined;
 }
 
 /**
@@ -193,4 +210,14 @@ IndexRange.prototype.overlaps = function(range) {
 IndexRange.prototype.contiguous = function(range) {
     var ranges = IndexRange.sort([range, this])
     return (ranges[0].end() + 1 === ranges[1].start())
+}
+
+/**
+ * Creates a string representation of IndexRange
+ * @override
+ * @returns {string} - String representation.
+ */
+
+IndexRange.prototype.toString = function() {
+    return '' + this._start + '-' + this._end;
 }
