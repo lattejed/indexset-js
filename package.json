@@ -5,7 +5,7 @@
   "description": "An index set implementation in javascript for efficient storage and manipulation of sets of integers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,8 @@
   },
   "keywords": [
     "set",
-    "indexset"
+    "indexset",
+    "range"
   ],
   "author": "Matthew Smith <m@lattejed.com> (http://lattejed.com)",
   "license": "MIT",
