@@ -5,7 +5,7 @@
 var IndexRange = require('./indexrange.js');
 
 /**
- * Creates an instance of IndexSet.
+ * Create an instance of IndexSet.
  * Stores a set of unsigned integers efficiently.
  * Expects integers in the range 0 <= n <= 9007199254740991.
  * Behavior for negative numbers is undefined.
@@ -34,6 +34,16 @@ IndexSet.prototype.addRanges = function(ranges) {
     this._addRanges(ranges);
 }
 
+/**
+ * Remove IndexRange from set.
+ * If set does not contain indexes in range, does nothing.
+ * @param {IndexRange} range - IndexRanges to remove.
+ */
+
+IndexSet.prototype.removeRange = function(range) {
+    this._removeRange(range);
+}
+
 /** 
  * Add indexes to set.
  * Expects integers in the range 0 <= n <= 9007199254740991.
@@ -53,6 +63,23 @@ IndexSet.prototype.addIndexes = function(idxs) {
     this._addRanges(ranges);
 }
 
+/**
+ * Remove indexes from set.
+ * If set does not contain indexes, does nothing.
+ * @param {(string|Number|string[]|Number[])} range idxs - Indexes to remove.
+ */
+
+IndexSet.prototype.removeIndexes = function(idxs) {
+    if (!Array.isArray(idxs)) {
+        idxs = [idxs];
+    }
+    for (var i=0; i<idxs.length; i++) {
+        var idx = idxs[i];
+        var range = new IndexRange(idx, idx);
+        this._removeRange(range);
+    }
+}
+
 /** 
  * Test if index is in set.
  * @param {(string|Number)} idx - Index to test.
@@ -60,7 +87,14 @@ IndexSet.prototype.addIndexes = function(idxs) {
  */
 
 IndexSet.prototype.contains = function(idx) {
-    return this._contains(idx);
+    idx = parseInt(idx, 10);
+    for (var i=0; i<this._ranges.length; i++) {
+        var range = this._ranges[i];
+        if (range.contains(idx)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 /**
@@ -82,7 +116,7 @@ IndexSet.prototype.firstIndex = function() {
     if (this._ranges.length === 0) {
         return undefined;
     }
-    return this._ranges[0][0];
+    return this._ranges[0].start();
 }
 
 /**
@@ -95,7 +129,7 @@ IndexSet.prototype.lastIndex = function() {
     if (length === 0) {
         return undefined;
     }
-    return this._ranges[length-1][1];
+    return this._ranges[length-1].end();
 }
 
 /** 
@@ -104,22 +138,13 @@ IndexSet.prototype.lastIndex = function() {
  */
 
 IndexSet.prototype._addRanges = function(ranges) {
-    this._ranges = IndexRange.compact(this._ranges + ranges)
-    this._updateOrderAndCount();
+    this._ranges = IndexRange.compact(this._ranges.concat(ranges));
+    this._updateCount();
 }
 
 IndexSet.prototype._removeRange = function(range) {
-    var ranges = IndexRange.compact(this._ranges + [range])
-    for (var i=0; i<ranges.length; i++) {
-        var _range = ranges[i];
-        if (range.equals(_range)) {
-            ranges.splice(i, 1); // TODO: fix this
-            break;
-        } 
-        if (range.overlaps(_range)) {
-            ranges[i] = _range.subtract(range);
-            break;
-        }
+    if (this._ranges.length > 0) {
+        this._ranges = IndexRange.subtract(this._ranges, range);
     }
     this._updateCount();
 }
@@ -128,18 +153,7 @@ IndexSet.prototype._updateCount = function() {
     var count = 0;
     for (var i=0; i<this._ranges.length; i++) {
         var range = this._ranges[i];
-        count += range.length;
+        count += range.length();
     }
     this._count = count;
-}
-
-IndexSet.prototype._contains = function(idx) {
-    idx = parseInt(idx, 10);  
-    for (var i=0; i<this._ranges.length; i++) {
-        var range = this._ranges[i];
-        if (range.contains(idx)) {
-            return true;
-        }
-    }
-    return false;
 }

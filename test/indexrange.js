@@ -138,15 +138,6 @@ describe('IndexRange', function() {
         });
     });
 
-    IndexRange.prototype.contains = function(idx) {
-        idx = parseInt(idx, 10);
-        if (idx >= this._start && idx <= this._end) {
-            return true;
-        }
-        return false;
-    }
-
-
     describe('#equals()', function () {
         it('should test true on range equality', function () {
             var range0 = new IndexRange(2, 4);
