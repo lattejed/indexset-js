@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "indexset-js",
   "version": "0.0.1",
   "description": "An index set implementation in javascript for efficient storage and manipulation of sets of integers",
