@@ -15,15 +15,30 @@ var IndexRange = require('./indexrange.js');
  * Behavior for negative numbers is undefined.
  * @constructor
  * @this {IndexSet}
+ * @param {(string|Number[]|string[])} idxs - A string representation or array of numbers or strings
  */
 
-module.exports = IndexSet = function() {
+module.exports = IndexSet = function(idxs) {
     if (!(this instanceof IndexSet)) {
         return new IndexSet();
     }
-    /** @private */ 
+
+    /** @private */
     this._ranges = [];
     this._count = 0;
+
+    if (idxs === undefined) return;
+
+    if (typeof idxs === 'string') {
+        this._fromString(idxs);
+    } else {
+        var obj = Array.isArray(idxs) && idxs.length > 0 ? idxs[0] : idxs;
+        if (obj instanceof IndexRange) {
+            this.addRanges(idxs);
+        } else {
+            this.addIndexes(idxs);
+        }
+    }
 }
 
 /**
@@ -34,17 +49,8 @@ module.exports = IndexSet = function() {
  */
 
 IndexSet.fromString = function(str) {
-    var reps = str.split(',');
-    var ranges = [];
-    for (var i=0; i<reps.length; i++) {
-        if (range = IndexRange.fromString(reps[i])) {
-            ranges.push(range);
-        } else {
-            return undefined;
-        }
-    }
     var set = new IndexSet();
-    set.addRanges(ranges);
+    set._fromString(str);
     return set;
 }
 
@@ -217,4 +223,19 @@ IndexSet.prototype._updateCount = function() {
         count += range.length();
     }
     this._count = count;
+}
+
+IndexSet.prototype._fromString = function(str) {
+    var reps = str.split(',');
+    var ranges = [];
+    for (var i=0; i<reps.length; i++) {
+        if (range = IndexRange.fromString(reps[i])) {
+            ranges.push(range);
+        } else {
+            throw new Error('Invalid range')
+        }
+    }
+    this._ranges = [];
+    this._count = 0;
+    this._addRanges(ranges);
 }

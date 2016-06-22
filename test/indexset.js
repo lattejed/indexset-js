@@ -4,14 +4,34 @@ var IndexSet = require('../src/indexset.js');
 
 describe('IndexSet', function() {
 
+    describe('new IndexSet()', function () {
+        it('should create a set from a string rep', function () {
+            var set = new IndexSet('1-2,5-10,11-14');
+            set.count().should.equal(12);
+        });
+        it('should create a set from a range', function () {
+            var range = new IndexRange(23, 24);
+            var set = new IndexSet(range);
+            set.count().should.equal(2);
+        });
+        it('should create a set from indexes', function () {
+            var set = new IndexSet([3, 4]);
+            set.count().should.equal(2);
+        });
+    });
+
     describe('.fromString()', function () {
         it('should create a set from a string rep', function () {
             var set = IndexSet.fromString('1-2,5-10,11-14');
             set.count().should.equal(12);
         });
         it('should fail to create a set from an invalid string rep', function () {
-            (typeof IndexSet.fromString('1-2,,5-10')).should.equal('undefined');
-            (typeof IndexSet.fromString('A-2,5-10')).should.equal('undefined');
+            (function(){
+                IndexSet.fromString('1-2,,5-10');
+            }).should.throw(Error);
+            (function(){
+                IndexSet.fromString('A-2,5-10');
+            }).should.throw(Error);
         });
     });
 
