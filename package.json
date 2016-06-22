@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "docs": "jsdoc2md src/*.js > API.md"
+    "docs": "jsdoc2md --template README.hbs src/*.js > README.md"
   },
   "repository": {
     "type": "git",

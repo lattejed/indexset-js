@@ -1,3 +1,5 @@
+
+# API Reference
 <a name="IndexRange"></a>
 
 ## IndexRange
@@ -156,4 +158,7 @@ Performs the opposite of .compact().
 | --- | --- | --- |
 | ranges | <code>[Array.&lt;IndexRange&gt;](#IndexRange)</code> | Ranges to subtract range from. |
 | range | <code>[IndexRange](#IndexRange)</code> | Range to subtract. |
+
+
+* * *
 
