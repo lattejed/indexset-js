@@ -2,6 +2,10 @@
  * Created by matthew on 6/21/16.
  */
 
+/** @module IndexRange */
+
+/** @class IndexRange */
+
 /**
  * Create an instance of IndexRange.
  * Stores a range of unsigned integers.
@@ -27,7 +31,6 @@ module.exports = IndexRange = function(start, end) {
 /**
  * Creates an instance of IndexRange from a string rep.
  * If string rep is invalid, returns undefined.
- * @constructor
  * @this {IndexRange}
  * @param {string} str - Valid string representation.
  */

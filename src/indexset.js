@@ -2,7 +2,11 @@
  * Created by matthew on 6/21/16.
  */
 
+/** @module IndexSet */
+
 var IndexRange = require('./indexrange.js');
+
+/** @class IndexSet */
 
 /**
  * Create an instance of IndexSet.
@@ -25,7 +29,6 @@ module.exports = IndexSet = function() {
 /**
  * Creates an instance of IndexSet from a string rep.
  * If string rep is invalid, returns undefined.
- * @constructor
  * @this {IndexSet}
  * @param {string} str - Valid string representation.
  */
