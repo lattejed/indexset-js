@@ -9,6 +9,10 @@ describe('IndexSet', function() {
             var set = new IndexSet('1-2,5-10,11-14');
             set.count().should.equal(12);
         });
+        it('should create a set from a string rep', function () {
+            var set = new IndexSet('1-2');
+            set.count().should.equal(2);
+        });
         it('should create a set from a range', function () {
             var range = new IndexRange(23, 24);
             var set = new IndexSet(range);
@@ -17,6 +21,10 @@ describe('IndexSet', function() {
         it('should create a set from indexes', function () {
             var set = new IndexSet([3, 4]);
             set.count().should.equal(2);
+        });
+        it('should create a set from emtpy array', function () {
+            var set = new IndexSet([]);
+            set.count().should.equal(0);
         });
     });
 

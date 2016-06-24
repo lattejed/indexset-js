@@ -28,6 +28,7 @@ module.exports = IndexSet = function(idxs) {
     this._count = 0;
 
     if (idxs === undefined) return;
+    if (Array.isArray(idxs) && idxs.length === 0) return;
 
     if (typeof idxs === 'string') {
         this._fromString(idxs);
