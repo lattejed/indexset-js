@@ -131,6 +131,25 @@ describe('IndexSet', function() {
         });
     });
 
+    describe('#count()', function () {
+        it('should return count', function () {
+            var set = IndexSet.fromString('1-5,10-15');
+            set.count().should.equal(11);
+        });
+    });
+
+    describe('#indexAt()', function () {
+        it('should return correct index at index', function () {
+            var set = IndexSet.fromString('1-5,20-25,40-41');
+            set.count().should.equal(13);
+            set.indexAt(0).should.equal(1);
+            set.indexAt(3).should.equal(4);
+            set.indexAt(5).should.equal(20);
+            set.indexAt(10).should.equal(25);
+            set.indexAt(11).should.equal(40);
+        });
+    });
+
     describe('#firstIndex()', function () {
         it('should return first index', function () {
             var range = new IndexRange(3, 9);

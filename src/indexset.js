@@ -155,6 +155,28 @@ IndexSet.prototype.count = function() {
     return this._count;
 }
 
+/**
+ * Gets stored index at specific contiguous index.
+ * @see #count().
+ * @returns {Number} - Count.
+ */
+
+IndexSet.prototype.indexAt = function(idx) {
+    if (idx >= this._count || idx < 0) {
+        throw new Error('Index out of range')
+    }
+    var lo = 0;
+    var hi = 0;
+    for (var i=0; i<this._ranges.length; i++) {
+        var range = this._ranges[i];
+        hi += range.length();
+        if (idx >= lo && idx < hi) {
+            var offset = idx - lo;
+            return range.start() + offset;
+        }
+        lo += range.length();
+    }
+}
 
 /**
  * Gets first index in set or undefined if no indexes exist.
