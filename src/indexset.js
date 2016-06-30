@@ -204,6 +204,36 @@ IndexSet.prototype.lastIndex = function() {
 }
 
 /**
+ * Separates ranges to max length.
+ * @param {Number} maxLength - Maximum lenght of returned range.
+ * @returns {IndexRange[]} - Ranges.
+ */
+
+IndexSet.prototype.pagedRanges = function(maxLength) {
+    if (this._ranges.length === 0 || maxLength === undefined) {
+        return this._ranges;
+    }
+    var ranges = [];
+    for (var i=0; i<this._ranges.length; i++) {
+        var range = this._ranges[i];
+        if (range.length() <= maxLength) {
+            ranges.push(range);
+        } else {
+            var num = Math.floor(range.length() / maxLength);
+            var rem = range.length() % maxLength;
+            for (var j=0; j<num; j++) {
+                let start = range.start() + (maxLength * j);
+                ranges.push(new IndexRange(start, start + maxLength - 1));
+            }
+            if (rem > 0) {
+                ranges.push(new IndexRange(maxLength * num, maxLength * num + rem - 1));
+            }
+        }
+    }
+    return ranges;
+}
+
+/**
  * Creates a string representation of IndexSet.
  * If no indexes are present, returns undefined.
  * @override

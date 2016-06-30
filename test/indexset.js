@@ -176,6 +176,23 @@ describe('IndexSet', function() {
         });
     });
 
+    describe('#pagedRanges()', function () {
+        it('should page set into ranges', function () {
+            var set = IndexSet.fromString('0-21');
+            var ranges = set.pagedRanges(5);
+            ranges[0].start().should.equals(0)
+            ranges[4].end().should.equals(21)
+        });
+        it('should page set into ranges', function () {
+            var set = IndexSet.fromString('0-3,5-10,11-12,15-18');
+            var ranges = set.pagedRanges(2);
+            ranges[0].start().should.equals(0)
+            ranges[0].end().should.equals(1)
+            ranges[7].start().should.equals(17)
+            ranges[7].end().should.equals(18)
+        });
+    });
+
     describe('#toString()', function () {
         it('should create string rep of set', function () {
             var range0 = new IndexRange(0, 10);
